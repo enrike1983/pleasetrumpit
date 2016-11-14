@@ -32,8 +32,8 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 ));
 
 $app->get('/', function () use ($app) {
-die(var_dump(phpinfo()));
-    $sql = "SELECT COUNT(*) FROM activities";
+    
+    $sql = "SELECT * FROM activities";
     $activities = $app['db']->fetchAll($sql);
 
     return $app['twig']->render('pages/home.twig', array(
