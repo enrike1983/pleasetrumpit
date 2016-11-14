@@ -23,7 +23,7 @@ $app->get('/', function () use ($app) {
     return $app['twig']->render('pages/home.twig');
 });
 
-$app->get('/{desired_image_width}/{desired_image_height}', function($desired_image_width, $desired_image_height) use($app) {
+$app->get('/{desired_image_width}x{desired_image_height}', function($desired_image_width, $desired_image_height) use($app) {
 
     $public_folder = 'public/dummy-img';
     $finder = new Finder();
