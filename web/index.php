@@ -113,7 +113,7 @@ $app->get('/{desired_image_width}/{desired_image_height}', function($desired_ima
 
     header('Content-type: image/jpeg');
     imagejpeg($desired_gdim);
-    
+
     die();
 
 })->value('custom_value', false);

@@ -1,24 +1,47 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="ngDummyGianni" ng-controller="mainCtrl">
+<!doctype html>
+<html lang="">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Dummy Gianni - Placeholder{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Please Trump It</title>
+    <meta name="description" content="Content description less than 200 characters">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% block head %}{% endblock %}
-    {% block head_stylesheets %}
-        <link rel="stylesheet" type="text/css" href="/public/css/main.css">
-    {% endblock %}
-    {% block head_javascripts %}
-        <!-- // <script src="/js/modernizr.dev.js" type="text/javascript" charset="utf-8"></script> -->
-    {% endblock %}
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- Your styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+    <link rel="stylesheet" href="/public/assets/css/style.css">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#001121">
+    <!-- Basic meta data, share -->
+    <meta property="og:url" content="http://pleasetrump.it">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Please Trump It">
+    <meta property="og:image" content="http://pleasetrump.it/img/share-img.jpg">
+    <meta property="og:description" content="Put up a wall between the quality of your sites and those of others with the Trump Image Generator.">
+    <meta property="og:site_name" content="Please Trump It">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@nicksruggeri">
+    <meta name="twitter:creator" content="@nicksruggeri">
+    <meta name="twitter:url" content="http://pleasetrump.it">
+    <meta name="twitter:title" content="Please Trump It">
+    <meta name="twitter:description" content="Put up a wall between the quality of your sites and those of others with the Trump Image Generator.">
+    <meta name="twitter:image" content="http://pleasetrump.it/img/share-img.jpg">
+
+    <meta itemprop="name" content="Please Trump It">
+    <meta itemprop="description" content="Put up a wall between the quality of your sites and those of others with the Trump Image Generator.">
+    <meta itemprop="image" content="http://pleasetrump.it/img/share-img.jpg">
+
 </head>
 <body>
     <header></header>
     {% block content %}{% endblock %}
     <footer></footer>
     {% block footer_javascripts %}
-        <script src="/public/js/vendor.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/public/js/main.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/public/assets/js/vendor.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/public/assets/js/main.min.js" type="text/javascript" charset="utf-8"></script>
     {% endblock %}
 </body>
 </html>
