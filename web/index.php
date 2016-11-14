@@ -5,7 +5,7 @@ require('../vendor/autoload.php');
 use Symfony\Component\Finder\Finder;
 
 $app = new Silex\Application();
-$app['debug'] = true;
+$app['debug'] = false;
 
 // Register primary services
 
@@ -32,7 +32,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 ));
 
 $app->get('/', function () use ($app) {
-    
+
     $sql = "SELECT * FROM activities";
     $activities = $app['db']->fetchAll($sql);
 
