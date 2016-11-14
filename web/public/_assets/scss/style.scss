@@ -1,0 +1,26 @@
+// https://github.com/timhartmann/Scss-Styleguide
+
+@charset 'UTF-8';
+
+// 1.Base
+@import '_base/config',
+        '_base/normalize',
+        '_base/presets',
+        '_base/fonts',
+        '_base/helpers';
+
+// 2.Layouts
+@import '_layouts/l-default';
+
+.svg-filters {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+
+.m-footer {
+    background: red;
+    padding: 10vw;
+}

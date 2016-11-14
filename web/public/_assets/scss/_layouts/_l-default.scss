@@ -1,0 +1,293 @@
+.l-wrapper {
+    @media screen and (min-width: 900px) {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        min-height: 55vw;
+    }
+}
+
+.title span, .subtitle--h2 {
+    &::selection {
+        background: rgba(0,0,0,0.3); /* WebKit/Blink Browsers */
+    }
+    &::-moz-selection {
+        background: rgba(0,0,0,0.3); /* Gecko Browsers */
+    }
+}
+
+.title {
+    font-family: $primaryFontRegular;
+    font-size: 9.5vw;
+    text-align: center;
+    @media screen and (min-width: 900px) {
+        text-align: left;
+        padding: 0;
+        line-height: 0.78;
+        font-size: 13vw;
+        top: 3vw;
+        left: 3vw;
+        position: absolute;
+        span {
+            display: block;
+        }
+    }
+}
+
+.box-create-url {
+    margin: 8vw 0;
+    text-align: center;
+    @media screen and (min-width: 900px) {
+        text-align: right;
+        margin: 0;
+    }
+    input {
+        margin-top: 1vw;
+        padding: 1.5vw;
+        font-size: 1.7vw;
+        font-size: calc(10px + 1vw);
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #cfcfcf;
+        @media screen and (min-width: 900px) {
+            text-align: right;
+        }
+    }
+    .button {
+        background: $red;
+        color: $white;
+        font-weight: bold;
+        font-size: calc(14px + .5vw);
+        margin-top: 2vw;
+        border-radius: 5px;
+        padding: 1vw 4vw;
+        -webkit-font-smoothing: antialiased;
+        border: none;
+        font-family: 'Montserrat', sans-serif;
+        user-select: none;
+        outline: 90px solid transparent!important; // this makes the area of effect of the filter bigger. This doesn't change anything on Firefox.
+        position: relative;
+        z-index: 0;
+        padding: 10px 30px;
+        width: 23vw;
+        min-width: 160px;
+        margin-top: 3vw;
+        @media screen and (min-width: 900px) {
+            margin-top: 1vw;
+            padding: 1vw 4vw;
+            width: 18vw;
+        }
+        .safari & {
+            -webkit-filter: none!important;
+            filter: none!important;
+        }
+        &:focus {
+            outline: none;
+        }
+        &.stop {
+            pointer-events: none;
+        }
+        .left, .right {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 15px;
+            background: $red;
+            top: 50%;
+            margin-top: -12px;
+            z-index: -2;
+
+            &.left {
+                left: 0;
+            }
+
+            &.right {
+                right: 0;
+            }
+        }
+    }
+}
+
+.counter {
+    font-family: $primaryFontRegular;
+    line-height: 0.9;
+    font-size: calc(17px + 1vw);
+    display: block;
+    margin-bottom: 5vw;
+    @media screen and (min-width: 900px) {
+        margin-bottom: 0;
+    }
+}
+
+.list-social {
+    margin-top: 20vw;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (min-width: 900px) {
+        display: block;
+        margin-top: 0;
+        position: absolute;
+        left: 3vw;
+        bottom: 3vw;
+    }
+    > a {
+        color: #fff;
+        display: inline-block;
+        margin-top: 2vw;
+    }
+    > div {
+        display: flex;
+        justify-content: center;
+        a {
+            width: 30px;
+            margin-right: 20px;
+        }
+        svg {
+            fill: #fff;
+        }
+        a, svg {
+            display: block;
+        }
+    }
+}
+
+.subtitle {
+    font-family: $primaryFontRegular;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    &--h2 {
+        font-size: 4vw;
+        text-align: center;
+        br {
+            display: none;
+        }
+        @media screen and (min-width: 900px) {
+            padding-left: 20px;
+            border-left: 10px solid #fff;
+            text-align: left;
+            font-size: calc(16px + 1vw);
+            position: absolute;
+            bottom: 12.5vw;
+            left: 3vw;
+            br {
+                display: block;
+            }
+        }
+    }
+    &--h3 {
+        color: $black;
+        margin-bottom: 8vw;
+        font-size: 5vw;
+        @media screen and (min-width: 900px) {
+            font-size: calc(30px + 1vw);
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.box-left {
+    background: url(../img/donald.jpg) center center;
+    background-size: cover;
+    @media screen and (min-width: 900px) {
+        width: 60%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__bg {
+        padding: 30vw 10vw 10vw 10vw;
+        background: rgba(#1a1a2a,.95);
+        @media screen and (min-width: 900px) {
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.box-right {
+    background: $white;
+    @media screen and (min-width: 900px) {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 100%;
+            background: $white;
+            transform: skew(-10deg) translateX(-30%);
+        }
+    }
+    &__wrapper {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10vw;
+        text-align: center;
+        @media screen and (min-width: 900px) {
+            padding: 3vw;
+            text-align: right;
+        }
+        p {
+            font-size: calc(16px + .5vw);
+            opacity: .6;
+        }
+    }
+}
+
+
+#credits {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: rgba(0,0,0,0.9);
+    padding: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease-out;
+    transition-delay: 0s;
+    span {
+        opacity: 0;
+        transition: opacity .05s ease-out;
+    }
+    &:target {
+        opacity: 1;
+        pointer-events: visible;
+        span {
+            opacity: 1;
+            transition-delay: 0s;
+        }
+        @for $i from 1 to 13 {
+           span:nth-child(#{$i}) { transition-delay: $i * .3s; }
+        }
+    }
+    p {
+        color: #fff;
+        font-family: $primaryFontRegular;
+        font-size: 12.5vw;
+        text-align: center;
+    }
+}
