@@ -23,21 +23,10 @@ $app->get('/', function () use ($app) {
     return $app['twig']->render('pages/home.twig');
 });
 
-$app->get('/{desired_image_width}/{desired_image_height}/{custom_value}', function($desired_image_width, $desired_image_height, $custom_value) use($app) {
+$app->get('/{desired_image_width}/{desired_image_height}', function($desired_image_width, $desired_image_height) use($app) {
 
     $public_folder = 'public/dummy-img';
     $finder = new Finder();
-
-    switch($custom_value) {
-        case 'mani':
-            $finder->name('*_mani.jpg');
-            break;
-        case 'merda':
-            $finder->name('*_merda.jpg');
-            break;
-    }
-
-
 
     $finder->files()->in($public_folder);
 
@@ -46,7 +35,7 @@ $app->get('/{desired_image_width}/{desired_image_height}/{custom_value}', functi
     $i = 0;
     $element = null;
     foreach($finder as $file) {
-        if($i == $rand_key) {
+        if($i === $rand_key) {
             $element = $file;
         }
         $i++;
@@ -124,7 +113,9 @@ $app->get('/{desired_image_width}/{desired_image_height}/{custom_value}', functi
 
     header('Content-type: image/jpeg');
     imagejpeg($desired_gdim);
-die();
+    
+    die();
+
 })->value('custom_value', false);
 
 
