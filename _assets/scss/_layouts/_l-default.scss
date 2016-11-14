@@ -270,6 +270,22 @@
     pointer-events: none;
     transition: opacity .2s ease-out;
     transition-delay: 0s;
+    .credits-close {
+        display: block;
+        position: absolute;
+        top: 2vw;
+        right: 2vw;
+        svg {
+            min-width: 40px;
+            min-height: 40px;
+            width: 3vw;
+            height: 3vw;
+            display: block;
+            path {
+                fill: #fff;
+            }
+        }
+    }
     span {
         opacity: 0;
         transition: opacity .05s ease-out;
