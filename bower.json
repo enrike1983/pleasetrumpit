@@ -1,0 +1,21 @@
+{
+  "name": "dummygianni",
+  "version": "0.0.1",
+  "homepage": "https://github.com/enrike1983/dummygianni",
+  "authors": [
+    "nicholasruggeri <ruggerinicholas@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-scss": "3.0.3",
+    "angular": "1.4.3",
+    "salvattore": "1.0.8"
+  }
+}

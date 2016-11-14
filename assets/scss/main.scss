@@ -1,0 +1,9 @@
+@import "../vendor/normalize-scss/normalize";
+
+@import "settings"; // Global variables, config switches
+@import "mixins"; // Default mixins and functions
+@import "generic"; // Ground-zero styles (normalize, resets, box-sizing ecc)
+@import "base"; // Unclassed HTML elements (type selectors)
+
+
+@import "components/bg-images";

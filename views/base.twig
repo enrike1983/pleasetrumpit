@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngDummyGianni" ng-controller="mainCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Dummy Gianni - Placeholder{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}{% endblock %}
+    {% block head_stylesheets %}
+        <link rel="stylesheet" type="text/css" href="/public/css/main.css">
+    {% endblock %}
+    {% block head_javascripts %}
+        <!-- // <script src="/js/modernizr.dev.js" type="text/javascript" charset="utf-8"></script> -->
+    {% endblock %}
+</head>
+<body>
+    <header></header>
+    {% block content %}{% endblock %}
+    <footer></footer>
+    {% block footer_javascripts %}
+        <script src="/public/js/vendor.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/public/js/main.min.js" type="text/javascript" charset="utf-8"></script>
+    {% endblock %}
+</body>
+</html>
