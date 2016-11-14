@@ -1,7 +1,7 @@
 RewriteEngine On
 
-RewriteCond %{HTTP_HOST} ^pleasetrump.it$
-RewriteRule (.*) http://www.pleasetrump.it/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
