@@ -5,7 +5,8 @@
     "ext-gd": "*",
     "symfony/finder": "~2.7",
     "symfony/twig-bridge": "~2.7",
-    "twig/twig": "~1.18"
+    "twig/twig": "~1.18",
+    "doctrine/dbal": "^2.5"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"

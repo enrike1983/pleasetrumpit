@@ -19,12 +19,35 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
 ));
 
+//Database
+$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+    'db.options' => array(
+        'driver'   => 'pdo_mysql',
+        'host'      => 'localhost',
+        'dbname'    => 'pleasetrumpit',
+        'user'      => 'pleasetrumpit',
+        'password'  => 'yYge9t572QKXuKB4',
+        'charset'   => 'utf8',
+    ),
+));
+
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('pages/home.twig');
+
+    $sql = "SELECT COUNT(*) FROM activities";
+    $activities = $app['db']->fetchAll($sql);
+
+    return $app['twig']->render('pages/home.twig', array(
+        'activities' => $activities
+    ));
 });
 
 $app->get('/{desired_image_width}x{desired_image_height}', function($desired_image_width, $desired_image_height) use($app) {
 
+    //update db entry
+
+    $app['db']->insert('activities', array('img_width' => $desired_image_width, 'img_height' => $desired_image_height));
+
+    //images setup
     $public_folder = 'public/dummy-img';
     $finder = new Finder();
 
