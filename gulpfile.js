@@ -10,10 +10,10 @@ var gulp = require('gulp'),
  * Compile files from assets/scss into web/public/css
  */
 gulp.task('sass', function () {
-    return gulp.src('_assets/scss/main.scss')
+    gulp.src('_assets/scss/*.scss')
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(prefix())
-        .pipe(gulp.dest('web/public/assets/css'));
+        .pipe(gulp.dest('web/public/assets/css'))
 });
 
 /**
