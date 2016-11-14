@@ -21,7 +21,7 @@ gulp.task('sass', function () {
  */
 gulp.task('js', function(){
     return gulp.src('_assets/js/**/*.js')
-        .pipe(concat('main.js'))
+        .pipe(concat('scripts.js'))
         .pipe(uglify())
         .pipe(gulp.dest('web/public/assets/js'));
 });
