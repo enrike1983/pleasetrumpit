@@ -150,6 +150,7 @@ $app->get('/{desired_image_width}x{desired_image_height}', function($desired_ima
      */
 
     header('Content-type: image/jpeg');
+    header('Access-Control-Allow-Origin: *');
     imagejpeg($desired_gdim);
 
     die();
