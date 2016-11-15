@@ -3,16 +3,28 @@
 require('../vendor/autoload.php');
 
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpKernel\Debug\ErrorHandler;
+use Symfony\Component\HttpKernel\Debug\ExceptionHandler;
+use Monolog\Logger;
+
+//ini_set('display_errors', 1);
+//error_reporting(-1);
+//ErrorHandler::register();
+//if ('cli' !== php_sapi_name()) {
+//    ExceptionHandler::register();
+//}
 
 $app = new Silex\Application();
-$app['debug'] = false;
 
 // Register primary services
+## Env config setup
+$env = getenv('HART_APP_ENV') ? : 'local';
+$app->register(new \Igorw\Silex\ConfigServiceProvider(__DIR__ ."/../config/$env/config.yml"));
 
-//Monolog
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-    'monolog.logfile' => 'php://stderr',
-));
+////Monolog
+//$app->register(new Silex\Provider\MonologServiceProvider(), array(
+//    'monolog.logfile' => 'php://stderr',
+//));
 
 //Twig
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
@@ -22,12 +34,11 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 //Database
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
-        'driver'   => 'pdo_mysql',
-        'host'      => 'localhost',
-        'dbname'    => 'pleasetrumpit',
-        'user'      => 'pleasetrumpit',
-        'password'  => 'yYge9t572QKXuKB4',
-        'charset'   => 'utf8',
+        'driver' => $app['database']['driver'],
+        'dbname' => $app['database']['dbname'],
+        'host' => $app['database']['host'],
+        'user' => $app['database']['user'],
+        'password' => $app['database']['password'],
     ),
 ));
 

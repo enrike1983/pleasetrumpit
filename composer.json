@@ -6,7 +6,9 @@
     "symfony/finder": "~2.7",
     "symfony/twig-bridge": "~2.7",
     "twig/twig": "~1.18",
-    "doctrine/dbal": "^2.5"
+    "doctrine/dbal": "^2.5",
+    "igorw/config-service-provider": "^1.2",
+    "symfony/yaml": "2.1"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
