@@ -5,3 +5,5 @@ composer.phar
 node_modules
 bower_components
 .idea/
+config/local
+config/prod
