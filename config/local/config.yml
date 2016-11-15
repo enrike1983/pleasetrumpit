@@ -1,7 +1,0 @@
-debug: true
-database:
-    driver: pdo_mysql
-    dbname: pleasetrumpit
-    host: localhost
-    user: root
-    password: h-art
