@@ -47,8 +47,20 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
  */
 $app->get('/', function () use ($app) {
 
-    $sql = "SELECT * FROM activities";
-    $activities = $app['db']->fetchAll($sql);
+    //apc
+    if(extension_loaded('apcu')) {
+        if(apc_exists('expelled_images')) {
+            $activities = apc_fetch('expelled_images');
+        } else {
+            $sql = "SELECT * FROM activities";
+            $activities = $app['db']->fetchAll($sql);
+            apc_add('expelled_images', $activities, 10);
+        }
+    } else {
+        $sql = "SELECT * FROM activities";
+        $activities = $app['db']->fetchAll($sql);
+        apc_add('expelled_images', $activities);
+    }
 
     return $app['twig']->render('pages/home.twig', array(
         'activities' => $activities
