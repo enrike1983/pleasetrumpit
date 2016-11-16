@@ -247,6 +247,9 @@
             padding: 3vw;
             text-align: right;
         }
+        &--center {
+            justify-content: center;
+        }
         p {
             font-size: calc(16px + .5vw);
             opacity: .6;

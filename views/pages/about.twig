@@ -7,10 +7,12 @@
 
         <div class="box-left">
             <div class="box-left__bg">
-                <h1>
-                    <div class="title"><span class="c-blue">Please</span> <span class="c-red"><strong>Trump</strong></span> <span class="c-white">It</span></div>
-                    <div class="subtitle  subtitle--h2  c-white">Make <strong>Image <br> Placeholders</strong> <br>Great Again!</div>
-                </h1>
+                <a href="/">
+                    <h1>
+                        <div class="title"><span class="c-blue">Please</span> <span class="c-red"><strong>Trump</strong></span> <span class="c-white">It</span></div>
+                        <div class="subtitle  subtitle--h2  c-white">Make <strong>Image <br> Placeholders</strong> <br>Great Again!</div>
+                    </h1>
+                </a>
 
                 <div class="list-social">
                     <div>
@@ -25,41 +27,16 @@
                             </span>
                         </a>
                     </div>
-                    <a href="#credits" title="credits">Credits</a> <a href="/about" title="about">About</a>
+                    <a href="#credits" title="credits">Credits</a> <a href="/" title="home">Home</a>
                 </div>
             </div>
         </div>
 
         <div class="box-right">
-            <div class="box-right__wrapper">
-                <h2 class="subtitle  subtitle--h3">
-                    Still using old and democratic <strong>image placeholders</strong>?
-                </h2>
-
-                <p>
-                    Put up a wall between the quality of your sites and those of others with the<br>
-                    <strong>Trump Image Placeholders</strong> <strong>Generator</strong>.<br><br>
-                    Don’t make them nice, make them <b>PRESIDENTIAL</b>.
+            <div class="box-right__wrapper  box-right__wrapper--center">
+               <p>
+                    <strong>Please Trump It</strong> generates <strong>image placeholders</strong> based on <strong>Donald Trump</strong> pictures. Put the url in your html and you will receive a resized <strong>image</strong> for your next project.
                 </p>
-
-                <div class="box-create-url">
-                    <span class="counter">
-                        {{ activities|length }} <strong>images</strong> expelled!
-                    </span>
-                    <input class="url-input" type="text" value="http://www.pleasetrump.it/1000x1000" placeholder="http://www.pleasetrump.it/1000x1000">
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
-                        <defs>
-                            <filter id="filter-goo-2">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
-                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                                <feComposite in="SourceGraphic" in2="goo" />
-                            </filter>
-                        </defs>
-                    </svg>
-                    <button id="component-2" class="url-button button button--2" style="filter: url('#filter-goo-2')">
-                        COPY
-                    </button>
-                </div>
             </div>
         </div>
 
