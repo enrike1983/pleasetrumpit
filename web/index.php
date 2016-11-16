@@ -3,6 +3,7 @@
 require('../vendor/autoload.php');
 
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Debug\ErrorHandler;
 use Symfony\Component\HttpKernel\Debug\ExceptionHandler;
 use Monolog\Logger;
@@ -160,12 +161,23 @@ $app->get('/{desired_image_width}x{desired_image_height}', function($desired_ima
      * Render the image
      * Alternatively, you can save the image in file-system or database
      */
-
-    header('Content-type: image/jpeg');
+    /*header('Content-type: image/jpeg');
     header('Access-Control-Allow-Origin: *');
-    imagejpeg($desired_gdim);
+    imagejpeg($desired_gdim);*/
 
-    die();
+    ob_start();
+    imagejpeg($desired_gdim);
+    $imagevariable = ob_get_contents();
+    ob_end_clean();
+
+    $headers = array(
+        'Content-Type'     => 'image/jpeg',
+        'Content-Disposition' => 'inline; filename="abc.jpg"',
+        'Access-Control-Allow-Origin' =>  '*'
+    );
+
+    return new Response($imagevariable, 200, $headers);
+
 
 })->value('custom_value', false);
 
