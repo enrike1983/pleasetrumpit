@@ -7,4 +7,4 @@ bower_components
 .idea/
 config/local/
 config/prod/
-app.db
+database/
