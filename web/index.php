@@ -35,11 +35,14 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 //Database
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
-        'driver' => $app['database']['driver'],
+        'driver'   => 'pdo_sqlite',
+        'path'     => __DIR__.'/../app.db'
+
+        /*'driver' => $app['database']['driver'],
         'dbname' => $app['database']['dbname'],
         'host' => $app['database']['host'],
         'user' => $app['database']['user'],
-        'password' => $app['database']['password'],
+        'password' => $app['database']['password'],*/
     ),
 ));
 
